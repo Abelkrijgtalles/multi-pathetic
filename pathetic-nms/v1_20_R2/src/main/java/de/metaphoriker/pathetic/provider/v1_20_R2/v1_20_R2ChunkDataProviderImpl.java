@@ -1,14 +1,10 @@
 package de.metaphoriker.pathetic.provider.v1_20_R2;
 
+import de.metaphoriker.pathetic.platform.ChunkSnapshot;
 import net.minecraft.server.level.WorldServer;
 import net.minecraft.world.level.block.state.IBlockData;
 import net.minecraft.world.level.chunk.ChunkStatus;
 import net.minecraft.world.level.chunk.DataPaletteBlock;
-import org.bukkit.ChunkSnapshot;
-import org.bukkit.World;
-import org.bukkit.block.BlockState;
-import org.bukkit.craftbukkit.v1_20_R2.CraftChunk;
-import org.bukkit.craftbukkit.v1_20_R2.CraftWorld;
 import de.metaphoriker.pathetic.api.snapshot.ChunkDataProvider;
 
 import java.lang.reflect.Field;
@@ -26,7 +22,7 @@ public final class v1_20_R2ChunkDataProviderImpl implements ChunkDataProvider {
     }
   }
 
-  @Override
+
   @SuppressWarnings("unchecked")
   public ChunkSnapshot getSnapshot(World world, int chunkX, int chunkZ) {
     try {

@@ -1,15 +1,11 @@
 package de.metaphoriker.pathetic.provider;
 
 import de.metaphoriker.pathetic.api.snapshot.ChunkDataProvider;
+import de.metaphoriker.pathetic.platform.ChunkSnapshot;
 import net.minecraft.server.level.WorldServer;
 import net.minecraft.world.level.block.state.IBlockData;
 import net.minecraft.world.level.chunk.DataPaletteBlock;
 import net.minecraft.world.level.chunk.status.ChunkStatus;
-import org.bukkit.ChunkSnapshot;
-import org.bukkit.World;
-import org.bukkit.block.BlockState;
-import org.bukkit.craftbukkit.v1_21_R3.CraftChunk;
-import org.bukkit.craftbukkit.v1_21_R3.CraftWorld;
 
 import java.lang.reflect.Field;
 

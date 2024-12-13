@@ -1,15 +1,11 @@
 package de.metaphoriker.pathetic.model.snapshot;
 
+import de.metaphoriker.pathetic.platform.ChunkSnapshot;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import lombok.NonNull;
-import org.bukkit.Bukkit;
-import org.bukkit.ChunkSnapshot;
-import org.bukkit.Material;
-import org.bukkit.World;
-import org.bukkit.block.BlockState;
 import de.metaphoriker.pathetic.api.snapshot.SnapshotManager;
 import de.metaphoriker.pathetic.api.wrapper.BlockInformation;
 import de.metaphoriker.pathetic.api.wrapper.PathBlock;

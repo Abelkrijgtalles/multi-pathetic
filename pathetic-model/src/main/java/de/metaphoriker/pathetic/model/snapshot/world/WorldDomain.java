@@ -1,8 +1,8 @@
 package de.metaphoriker.pathetic.model.snapshot.world;
 
+import de.metaphoriker.pathetic.platform.ChunkSnapshot;
 import java.util.Map;
 import java.util.Optional;
-import org.bukkit.ChunkSnapshot;
 import de.metaphoriker.pathetic.util.ExpiringHashMap;
 
 public class WorldDomain {

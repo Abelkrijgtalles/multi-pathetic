@@ -1,8 +1,8 @@
 package de.metaphoriker.pathetic.util;
 
+import de.metaphoriker.pathetic.platform.ChunkSnapshot;
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
-import org.bukkit.ChunkSnapshot;
 import org.bukkit.Material;
 
 import java.lang.reflect.InvocationTargetException;

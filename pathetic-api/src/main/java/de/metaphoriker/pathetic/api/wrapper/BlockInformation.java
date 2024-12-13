@@ -5,8 +5,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NonNull;
 import lombok.ToString;
 import lombok.Value;
-import org.bukkit.Material;
-import org.bukkit.block.BlockState;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 
 @Value
 @ToString
@@ -14,7 +14,8 @@ import org.bukkit.block.BlockState;
 public class BlockInformation {
 
   /** The material of the represented block */
-  @NonNull Material material;
+  @NonNull
+  Block material;
 
   /**
    * The block state of the represented block -- GETTER -- Gets the block state of the represented
@@ -22,5 +23,6 @@ public class BlockInformation {
    *
    * @api.Note This is only available in v. 1.13 or above and therefore nullable
    */
-  @Nullable BlockState blockState;
+  @Nullable
+  BlockState blockState;
 }

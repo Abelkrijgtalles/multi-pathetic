@@ -1,75 +1,65 @@
 package de.metaphoriker.pathetic.bukkit.listeners;
 
-import org.bukkit.block.Block;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.block.BlockBurnEvent;
-import org.bukkit.event.block.BlockExplodeEvent;
-import org.bukkit.event.block.BlockFadeEvent;
-import org.bukkit.event.block.BlockFromToEvent;
-import org.bukkit.event.block.BlockGrowEvent;
-import org.bukkit.event.block.BlockPistonExtendEvent;
-import org.bukkit.event.block.BlockPistonRetractEvent;
-import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.event.block.LeavesDecayEvent;
 import de.metaphoriker.pathetic.model.snapshot.FailingSnapshotManager;
+import de.metaphoriker.pathetic.platform.Listener;
+import de.metaphoriker.pathetic.platform.block.Block;
 
 public class ChunkInvalidateListener implements Listener {
 
-  @EventHandler
-  public void onBurn(BlockBurnEvent event) {
-    handleEvent(event.getBlock());
+  @Override
+  public void onBlockBurn(Block block) {
+    handleEvent(block);
   }
 
-  @EventHandler
-  public void onExplode(BlockExplodeEvent event) {
-    handleEvent(event.getBlock());
+  @Override
+  public void onBlockExplode(Block block) {
+    handleEvent(block);
   }
 
-  @EventHandler
-  public void onFade(BlockFadeEvent event) {
-    handleEvent(event.getBlock());
+  @Override
+  public void onBlockFade(Block block) {
+    handleEvent(block);
   }
 
-  @EventHandler
-  public void onFromTo(BlockFromToEvent event) {
-    handleEvent(event.getBlock(), event.getToBlock());
+  @Override
+  public void onBlockFromTo(Block blockFrom, Block blockTo) {
+    handleEvent(blockFrom, blockTo);
   }
 
-  @EventHandler
-  public void onGrow(BlockGrowEvent event) {
-    handleEvent(event.getBlock());
+  @Override
+  public void onBlockGrow(Block block) {
+    handleEvent(block);
   }
 
-  @EventHandler
-  public void onPistonChange(BlockPistonRetractEvent event) {
-    handleEvent(event.getBlock());
+  @Override
+  public void onPistonRetract(Block block) {
+    handleEvent(block);
   }
 
-  @EventHandler
-  public void onPistonChange(BlockPistonExtendEvent event) {
-    handleEvent(event.getBlock());
+  @Override
+  public void onPistonExtend(Block block) {
+    handleEvent(block);
   }
 
-  @EventHandler
-  public void onPlace(BlockPlaceEvent event) {
-    handleEvent(event.getBlock());
+  @Override
+  public void onBlockPlace(Block block) {
+    handleEvent(block);
   }
 
-  @EventHandler
-  public void onBreak(BlockBreakEvent event) {
-    handleEvent(event.getBlock());
+  @Override
+  public void onBlockBreak(Block block) {
+    handleEvent(block);
   }
 
-  @EventHandler
-  public void onDecay(LeavesDecayEvent event) {
-    handleEvent(event.getBlock());
+  @Override
+  public void onLeaveDecay(Block block) {
+    handleEvent(block);
   }
 
   private void handleEvent(Block... blocks) {
     for (Block block : blocks)
       FailingSnapshotManager.invalidateChunk(
-          block.getWorld().getUID(), block.getChunk().getX(), block.getChunk().getZ());
+        block.getWorld().getUID(), block.getChunk().getX(), block.getChunk().getZ());
   }
+
 }

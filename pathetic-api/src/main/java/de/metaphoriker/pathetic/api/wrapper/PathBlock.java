@@ -4,6 +4,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 /** A Class to represent a block in the world, except exempt of Bukkit */
 @Getter
@@ -19,7 +21,7 @@ public final class PathBlock {
    * @return Whether the block is air
    */
   public boolean isAir() {
-    return blockInformation.getMaterial().isAir();
+    return blockInformation.getMaterial() == Blocks.AIR;
   }
 
   /**
@@ -33,7 +35,8 @@ public final class PathBlock {
    * @return Whether the block is solid
    */
   public boolean isSolid() {
-    return blockInformation.getMaterial().isSolid();
+    // TODO: check if this works
+    return Block.isShapeFullBlock(blockInformation.getMaterial().defaultBlockState().getOcclusionShape());
   }
 
   /**

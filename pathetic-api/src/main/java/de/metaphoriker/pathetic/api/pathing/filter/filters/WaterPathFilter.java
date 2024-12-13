@@ -1,7 +1,7 @@
 package de.metaphoriker.pathetic.api.pathing.filter.filters;
 
 import lombok.NonNull;
-import org.bukkit.Material;
+import net.minecraft.world.level.block.Blocks;
 import de.metaphoriker.pathetic.api.pathing.filter.PathValidationContext;
 import de.metaphoriker.pathetic.api.pathing.filter.PathFilter;
 import de.metaphoriker.pathetic.api.snapshot.SnapshotManager;
@@ -16,6 +16,6 @@ public class WaterPathFilter implements PathFilter {
     PathPosition pathPosition = pathValidationContext.getPosition();
 
     return snapshotManager.getBlock(pathPosition).getBlockInformation().getMaterial()
-        == Material.WATER;
+        == Blocks.WATER;
   }
 }
