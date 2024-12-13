@@ -1,5 +1,5 @@
 package de.metaphoriker.pathetic.platform;
 
-public record Initializer(Listener listener, int majorMinecraftVersion, int minorMinecraftVersion) {
+public record Initializer(int majorMinecraftVersion, int minorMinecraftVersion) {
 
 }
